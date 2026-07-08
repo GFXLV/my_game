@@ -296,10 +296,23 @@ def _onLoginSuccess( email, password, playerName = "" ):
 	gChatConsole = ChatConsole.ChatConsole(
 		gScriptsConfig.readInt( "chat/visibleLines" ) )
 
-	mc = GUI.mcursor()
-	mc.visible = True
-	mc.clipped = True
-	BigWorld.setCursor( mc )
+	# Show cursor - try multiple approaches
+	try:
+		mc = GUI.mcursor()
+		mc.visible = True
+		mc.clipped = True
+		mc.size = ( 32, 32 )
+		BigWorld.setCursor( mc )
+	except:
+		try:
+			cursor = GUI.Simple( "system/maps/col_white.bmp" )
+			cursor.materialFX = "BLEND"
+			cursor.colour = ( 255, 255, 255, 255 )
+			cursor.width = 0.02
+			cursor.height = 0.02
+			BigWorld.setCursor( cursor )
+		except:
+			pass
 
 	_startHeartbeat( email )
 	_startCameraTick()
@@ -367,6 +380,7 @@ def initOnline( scriptsConfig, email = "" ):
 				mc = GUI.mcursor()
 				mc.visible = True
 				mc.clipped = True
+				mc.size = ( 32, 32 )
 				BigWorld.setCursor( mc )
 			except:
 				pass

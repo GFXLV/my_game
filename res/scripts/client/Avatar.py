@@ -52,13 +52,8 @@ class PlayerAvatar( Avatar ):
 			mc.visible = True
 			mc.clipped = True
 			BigWorld.setCursor( mc )
-			import BWPersonality
-			if BWPersonality.gChatConsole is not None:
-				BWPersonality.gChatConsole.write( "Cursor: visible=True" )
 		except:
-			import BWPersonality
-			if BWPersonality.gChatConsole is not None:
-				BWPersonality.gChatConsole.write( "Cursor: EXCEPTION" )
+			pass
 
 
 	def _createNameTag( self ):

@@ -109,12 +109,7 @@ class MainMenu:
         self.enterButton = None
         self.exitButton = None
 
-        mc = GUI.mcursor()
-        mc.visible = False
-        mc.clipped = True
-        BigWorld.setCursor( None )
-
-        self.onEnterGame()
+		self.onEnterGame()
 
     def _onExitGame( self ):
         BigWorld.quit()
