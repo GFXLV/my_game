@@ -24,6 +24,9 @@ gPlayerEmail = ""
 gPlayerName = ""
 gInGame = False
 gHeartbeatHandle = None
+gCameraYaw = 0.0
+gCameraPitch = 0.0
+_cameraTickRunning = False
 
 # ------------------------------------------------------------------------------
 # Section: Required callbacks
@@ -41,13 +44,6 @@ def init( scriptsConfig, engineConfig, prefs ):
 	# Show the main menu with Enter Game / Exit Game buttons
 	from Helpers import MainMenu
 	gMainMenu = MainMenu.MainMenu( _onEnterGame, _onExitGame )
-
-	# Set up third-person camera
-	try:
-		cam = BigWorld.Camera( "BehindObstacle" )
-		BigWorld.camera( cam )
-	except:
-		pass
 
 # This is called immediately after init() finishes.  We're done with all our
 # init code, so this is a no-op.
@@ -110,29 +106,51 @@ def handleKeyEvent( event ):
 # Mouse event handler
 def handleMouseEvent( event ):
 
-	global gInGame
+	global gInGame, gCameraYaw, gCameraPitch
 
 	# Let GUI process the event first
 	if GUI.handleMouseEvent( event ):
 		return True
 
-	# Camera/player rotation with mouse movement
+	# Camera rotation with mouse movement
 	if gInGame and not event.isMouseButton() and ( event.dx != 0 or event.dy != 0 ):
 		sens = 0.005
-		cam = BigWorld.camera()
-		if cam is not None:
-			try:
-				rotated = False
-				if event.dx != 0 and hasattr( cam, "yaw" ):
-					cam.yaw += event.dx * sens
-					rotated = True
-				if event.dy != 0 and hasattr( cam, "pitch" ):
-					cam.pitch = max( -1.5, min( 1.5, cam.pitch + event.dy * sens ) )
-					rotated = True
-			except:
-				pass
+		gCameraYaw += event.dx * sens
+		gCameraPitch = max( -1.5, min( 1.5, gCameraPitch + event.dy * sens ) )
 
+	# Camera follows player every frame (called from _cameraTick)
 	return False
+
+def _updateCamera():
+	global gInGame, gCameraYaw, gCameraPitch
+	try:
+		player = BigWorld.player()
+		if player is not None and gInGame:
+			import Math
+			cam = BigWorld.camera()
+			if cam is not None:
+				dist = 5.0
+				height = 1.8
+				sy, cy = Math.sin( gCameraYaw ), Math.cos( gCameraYaw )
+				sp, cp = Math.sin( gCameraPitch ), Math.cos( gCameraPitch )
+				cx = player.position.x + dist * sy * cp
+				cy2 = player.position.y + height + dist * sp
+				cz = player.position.z + dist * cy * cp
+				cam.position = Math.Vector3( cx, cy2, cz )
+				cam.direction = Math.Vector3(
+					player.position.x - cx,
+					player.position.y - cy2,
+					player.position.z - cz )
+	except:
+		pass
+
+def _cameraTick():
+	global gInGame, _cameraTickRunning
+	_updateCamera()
+	if gInGame:
+		BigWorld.callback( 0.0, _cameraTick )
+	else:
+		_cameraTickRunning = False
 
 
 # Joystick event handler
@@ -176,14 +194,20 @@ def _stopHeartbeat():
 			BigWorld.cancelCallback( gHeartbeatHandle )
 		except:
 			pass
-		gHeartbeatHandle = None
+	gHeartbeatHandle = None
 
 def _onExitGame():
 	_stopHeartbeat()
 	BigWorld.quit()
 
+def _startCameraTick():
+	global _cameraTickRunning
+	if not _cameraTickRunning:
+		_cameraTickRunning = True
+		_cameraTick()
+
 def _returnToMenu():
-	global gChatConsole, gInGame, gMainMenu, gPlayerEmail, gPlayerName, gHeartbeatHandle
+	global gChatConsole, gInGame, gMainMenu, gPlayerEmail, gPlayerName, gHeartbeatHandle, gCameraYaw, gCameraPitch
 
 	_stopHeartbeat()
 	_callDisconnectAPI( gPlayerEmail )
@@ -197,6 +221,8 @@ def _returnToMenu():
 	gPlayerEmail = ""
 	gPlayerName = ""
 	gInGame = False
+	gCameraYaw = 0.0
+	gCameraPitch = 0.0
 
 	mc = GUI.mcursor()
 	mc.visible = True
@@ -233,6 +259,7 @@ def _onLoginSuccess( email, password, playerName = "" ):
 	BigWorld.setCursor( mc )
 
 	_startHeartbeat( email )
+	_startCameraTick()
 	initOnline( gScriptsConfig, email )
 
 def _onBackToMenu():
@@ -256,6 +283,8 @@ def initOffline( scriptsConfig ):
 	mc.visible = True
 	mc.clipped = True
 	BigWorld.setCursor( mc )
+
+	_startCameraTick()
 
 	# Create a space for the client to inhabit
 	spaceID = BigWorld.createSpace()

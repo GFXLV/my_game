@@ -38,10 +38,12 @@ class PlayerAvatar( Avatar ):
 		# Create floating name tag above the model
 		self._createNameTag()
 
-		# Target the camera to this player
+		# Show cursor so it's visible during gameplay
 		try:
-			cam = BigWorld.Camera( "BehindObstacle" )
-			BigWorld.camera( cam )
+			mc = GUI.mcursor()
+			mc.visible = True
+			mc.clipped = True
+			BigWorld.setCursor( mc )
 		except:
 			pass
 
