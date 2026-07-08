@@ -57,15 +57,16 @@ class LoginForm:
         self.emailField.mouseButtonFocus = True
         self.emailField.crossFocus = True
 
-        self.emailText = GUI.Text("")
-        self.emailText.font = self.SMALL_FONT
-        self.emailText.colour = (255, 255, 255, 255)
-        self.emailText.horizontalPositionMode = "CLIP"
-        self.emailText.verticalPositionMode = "CLIP"
-        self.emailText.position = (-0.22, 0, 0)
-        self.emailText.horizontalAnchor = "LEFT"
-        self.emailText.verticalAnchor = "CENTER"
-        self.emailField.addChild(self.emailText, "label")
+		self.emailText = GUI.Text("")
+		self.emailText.font = self.SMALL_FONT
+		self.emailText.colour = (255, 255, 255, 255)
+		self.emailText.horizontalPositionMode = "CLIP"
+		self.emailText.verticalPositionMode = "CLIP"
+		self.emailText.position = (-0.22, 0, 0)
+		self.emailText.width = 0.44
+		self.emailText.horizontalAnchor = "LEFT"
+		self.emailText.verticalAnchor = "CENTER"
+		self.emailField.addChild(self.emailText, "label")
 
         self.passwordLabel = GUI.Text("Password:")
         self.passwordLabel.font = self.SMALL_FONT
@@ -87,15 +88,16 @@ class LoginForm:
         self.passwordField.mouseButtonFocus = True
         self.passwordField.crossFocus = True
 
-        self.passwordText = GUI.Text("")
-        self.passwordText.font = self.SMALL_FONT
-        self.passwordText.colour = (255, 255, 255, 255)
-        self.passwordText.horizontalPositionMode = "CLIP"
-        self.passwordText.verticalPositionMode = "CLIP"
-        self.passwordText.position = (-0.22, 0, 0)
-        self.passwordText.horizontalAnchor = "LEFT"
-        self.passwordText.verticalAnchor = "CENTER"
-        self.passwordField.addChild(self.passwordText, "label")
+		self.passwordText = GUI.Text("")
+		self.passwordText.font = self.SMALL_FONT
+		self.passwordText.colour = (255, 255, 255, 255)
+		self.passwordText.horizontalPositionMode = "CLIP"
+		self.passwordText.verticalPositionMode = "CLIP"
+		self.passwordText.position = (-0.22, 0, 0)
+		self.passwordText.width = 0.44
+		self.passwordText.horizontalAnchor = "LEFT"
+		self.passwordText.verticalAnchor = "CENTER"
+		self.passwordField.addChild(self.passwordText, "label")
 
         self.authButton = GUI.Window("system/maps/col_white.bmp")
         self.authButton.materialFX = "BLEND"
@@ -183,10 +185,10 @@ class LoginForm:
         self.backButton = None
         self.errorDisplay = None
 
-        mc = GUI.mcursor()
-        mc.visible = False
-        mc.clipped = True
-        BigWorld.setCursor(None)
+		mc = GUI.mcursor()
+		mc.visible = True
+		mc.clipped = True
+		BigWorld.setCursor(mc)
 
     def setError(self, msg):
         self.errorText = msg

@@ -363,6 +363,13 @@ def initOnline( scriptsConfig, email = "" ):
 				gChatConsole.write( "Login failed: " + serverMsg )
 		elif stage == 2:
 			gChatConsole.write( "Connected to server." )
+			try:
+				mc = GUI.mcursor()
+				mc.visible = True
+				mc.clipped = True
+				BigWorld.setCursor( mc )
+			except:
+				pass
 		elif stage == 6:
 			gChatConsole.write( "Disconnected: " + serverMsg )
 
