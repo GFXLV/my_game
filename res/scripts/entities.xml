@@ -1,0 +1,10 @@
+<root>
+	<ClientServerEntities>
+		<Avatar/>
+		<Greeter/>
+	</ClientServerEntities>
+
+	<ServerOnlyEntities>
+		<Space/>
+	</ServerOnlyEntities>
+</root>

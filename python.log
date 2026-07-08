@@ -1,0 +1,60 @@
+
+/------------------------------------------------------------------------------\
+BigWorld Release Client (compiled at 12:20:30 Aug 27 2012) starting on Wed Jul 08 03:30:13 2026
+Traceback (most recent call last):
+  File "E:/BWindie2.1/my_game/res/scripts/client\Greeter.py", line 39, in onLeaveWorld
+    self.filter = None
+TypeError: Entity.filter must be set to a Filter
+\--------------------------------------------------------------------------------/
+
+/------------------------------------------------------------------------------\
+BigWorld Release Client (compiled at 12:20:30 Aug 27 2012) starting on Wed Jul 08 03:39:43 2026
+\--------------------------------------------------------------------------------/
+
+/------------------------------------------------------------------------------\
+BigWorld Release Client (compiled at 12:20:30 Aug 27 2012) starting on Wed Jul 08 03:41:39 2026
+Traceback (most recent call last):
+  File "E:/BWindie2.1/my_game/res/scripts/client\Greeter.py", line 39, in onLeaveWorld
+    self.filter = None
+TypeError: Entity.filter must be set to a Filter
+\--------------------------------------------------------------------------------/
+
+/------------------------------------------------------------------------------\
+BigWorld Release Client (compiled at 12:20:30 Aug 27 2012) starting on Wed Jul 08 04:17:21 2026
+Traceback (most recent call last):
+  File "E:/BWindie2.1/my_game/res/scripts/client\Helpers\LoginForm.py", line 286, in handleMouseButtonEvent
+    self._submitAuth()
+  File "E:/BWindie2.1/my_game/res/scripts/client\Helpers\LoginForm.py", line 235, in _submitAuth
+    self.setError("Could not connect to auth server.")
+  File "E:/BWindie2.1/my_game/res/scripts/client\Helpers\LoginForm.py", line 193, in setError
+    self.errorDisplay.text = msg
+AttributeError: 'NoneType' object has no attribute 'text'
+\--------------------------------------------------------------------------------/
+
+/------------------------------------------------------------------------------\
+BigWorld Release Client (compiled at 12:20:30 Aug 27 2012) starting on Wed Jul 08 04:27:37 2026
+Traceback (most recent call last):
+  File "E:/BWindie2.1/my_game/res/scripts/client\Greeter.py", line 39, in onLeaveWorld
+    self.filter = None
+TypeError: Entity.filter must be set to a Filter
+\--------------------------------------------------------------------------------/
+
+/------------------------------------------------------------------------------\
+BigWorld Release Client (compiled at 12:20:30 Aug 27 2012) starting on Wed Jul 08 04:43:59 2026
+Traceback (most recent call last):
+  File "E:/BWindie2.1/my_game/res/scripts/client\Greeter.py", line 39, in onLeaveWorld
+    self.filter = None
+TypeError: Entity.filter must be set to a Filter
+\--------------------------------------------------------------------------------/
+
+/------------------------------------------------------------------------------\
+BigWorld Release Client (compiled at 12:20:30 Aug 27 2012) starting on Wed Jul 08 04:49:46 2026
+Traceback (most recent call last):
+  File "E:/BWindie2.1/my_game/res/scripts/client\BWPersonality.py", line 300, in onConnect
+    gChatConsole.write( "Disconnected: " + serverMsg )
+AttributeError: 'NoneType' object has no attribute 'write'
+Traceback (most recent call last):
+  File "E:/BWindie2.1/my_game/res/scripts/client\Greeter.py", line 39, in onLeaveWorld
+    self.filter = None
+TypeError: Entity.filter must be set to a Filter
+\--------------------------------------------------------------------------------/

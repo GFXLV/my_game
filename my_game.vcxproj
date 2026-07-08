@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}</ProjectGuid>
+    <RootNamespace>my_game</RootNamespace>
+    <Keyword>MakeFileProj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <NMakeBuildCommandLine>cd /D "$(ProjectDir)" &amp;&amp; run.bat</NMakeBuildCommandLine>
+    <NMakeCleanCommandLine>echo No clean step</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>cd /D "$(ProjectDir)" &amp;&amp; run.bat</NMakeReBuildCommandLine>
+    <NMakeOutput>..\bigworld\bin\client\bwclient.exe</NMakeOutput>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="deploy.ps1" />
+    <None Include="run.bat" />
+    <None Include="run_online.bat" />
+    <None Include="start_mygame.sh" />
+    <None Include="res\engine_config.xml" />
+    <None Include="res\scripts_config.xml" />
+    <None Include="res\server\bw.xml" />
+    <None Include="res\spaces\main\space.settings" />
+    <None Include="res\scripts\entities.xml" />
+    <None Include="res\scripts\services.xml" />
+    <None Include="res\scripts\user_data_objects.xml" />
+    <None Include="res\scripts\entity_defs\alias.xml" />
+    <None Include="res\scripts\entity_defs\Avatar.def" />
+    <None Include="res\scripts\entity_defs\Greeter.def" />
+    <None Include="res\scripts\entity_defs\Space.def" />
+    <None Include="res\scripts\base\Avatar.py" />
+    <None Include="res\scripts\base\BWPersonality.py" />
+    <None Include="res\scripts\base\Greeter.py" />
+    <None Include="res\scripts\base\Space.py" />
+    <None Include="res\scripts\cell\Avatar.py" />
+    <None Include="res\scripts\cell\BWPersonality.py" />
+    <None Include="res\scripts\cell\Greeter.py" />
+    <None Include="res\scripts\cell\Space.py" />
+    <None Include="res\scripts\client\Avatar.py" />
+    <None Include="res\scripts\client\BWPersonality.py" />
+    <None Include="res\scripts\client\Greeter.py" />
+    <None Include="res\scripts\client\Helpers\__init__.py" />
+    <None Include="res\scripts\client\Helpers\ChatConsole.py" />
+    <None Include="res\scripts\common\BWAutoImport.py" />
+    <None Include="res\scripts\common\chapters.py" />
+    <None Include="res\scripts\db\BWPersonality.py" />
+    <None Include="res\characters\barbarian.model" />
+    <None Include="res\characters\barbarian.visual" />
+    <None Include="res\characters\barbarian.primitives" />
+    <None Include="res\characters\barbarian.anca" />
+    <None Include="res\characters\barbarian_d.bmp" />
+    <None Include="res\characters\barbarian_armour_d.bmp" />
+    <None Include="res\characters\bipedgirl.model" />
+    <None Include="res\characters\bipedgirl.visual" />
+    <None Include="res\characters\bipedgirl.primitives" />
+    <None Include="res\characters\bipedgirl.thumbnail.bmp" />
+    <None Include="res\characters\bipedgirl.anca" />
+    <None Include="res\characters\axe.model" />
+    <None Include="res\characters\axe.visual" />
+    <None Include="res\characters\axe.primitives" />
+    <None Include="res\characters\reflect.tga" />
+    <None Include="res\characters\idle_a.animation" />
+    <None Include="res\characters\m_waveonehand.animation" />
+    <None Include="res\characters\animations\idle.animation" />
+    <None Include="res\characters\animations\run.animation" />
+    <None Include="res\characters\animations\spell.animation" />
+    <None Include="res\spaces\main\00000000o.chunk" />
+    <None Include="res\spaces\main\00000000o.cdata" />
+    <None Include="res\spaces\main\00000001o.chunk" />
+    <None Include="res\spaces\main\00000001o.cdata" />
+    <None Include="res\spaces\main\0000fffeo.chunk" />
+    <None Include="res\spaces\main\0000fffeo.cdata" />
+    <None Include="res\spaces\main\0000ffffo.chunk" />
+    <None Include="res\spaces\main\0000ffffo.cdata" />
+    <None Include="res\spaces\main\00010000o.chunk" />
+    <None Include="res\spaces\main\00010000o.cdata" />
+    <None Include="res\spaces\main\00010001o.chunk" />
+    <None Include="res\spaces\main\00010001o.cdata" />
+    <None Include="res\spaces\main\0001fffeo.chunk" />
+    <None Include="res\spaces\main\0001fffeo.cdata" />
+    <None Include="res\spaces\main\0001ffffo.chunk" />
+    <None Include="res\spaces\main\0001ffffo.cdata" />
+    <None Include="res\spaces\main\fffe0000o.chunk" />
+    <None Include="res\spaces\main\fffe0000o.cdata" />
+    <None Include="res\spaces\main\fffe0001o.chunk" />
+    <None Include="res\spaces\main\fffe0001o.cdata" />
+    <None Include="res\spaces\main\fffefffeo.chunk" />
+    <None Include="res\spaces\main\fffefffeo.cdata" />
+    <None Include="res\spaces\main\fffeffffo.chunk" />
+    <None Include="res\spaces\main\fffeffffo.cdata" />
+    <None Include="res\spaces\main\ffff0000o.chunk" />
+    <None Include="res\spaces\main\ffff0000o.cdata" />
+    <None Include="res\spaces\main\ffff0001o.chunk" />
+    <None Include="res\spaces\main\ffff0001o.cdata" />
+    <None Include="res\spaces\main\fffffffeo.chunk" />
+    <None Include="res\spaces\main\fffffffeo.cdata" />
+    <None Include="res\spaces\main\ffffffffo.chunk" />
+    <None Include="res\spaces\main\ffffffffo.cdata" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Scripts">
+      <UniqueIdentifier>{1a2b3c4d-5e6f-7890-abcd-ef1234567891}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Base">
+      <UniqueIdentifier>{1a2b3c4d-5e6f-7890-abcd-ef1234567892}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Cell">
+      <UniqueIdentifier>{1a2b3c4d-5e6f-7890-abcd-ef1234567893}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Client">
+      <UniqueIdentifier>{1a2b3c4d-5e6f-7890-abcd-ef1234567894}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Client\Helpers">
+      <UniqueIdentifier>{1a2b3c4d-5e6f-7890-abcd-ef1234567895}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Common">
+      <UniqueIdentifier>{1a2b3c4d-5e6f-7890-abcd-ef1234567896}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\DB">
+      <UniqueIdentifier>{1a2b3c4d-5e6f-7890-abcd-ef1234567897}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts\Entity Definitions">
+      <UniqueIdentifier>{1a2b3c4d-5e6f-7890-abcd-ef1234567898}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Configuration">
+      <UniqueIdentifier>{1a2b3c4d-5e6f-7890-abcd-ef1234567899}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Server">
+      <UniqueIdentifier>{1a2b3c4d-5e6f-7890-abcd-ef1234567900}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Spaces">
+      <UniqueIdentifier>{1a2b3c4d-5e6f-7890-abcd-ef1234567901}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Spaces\Main">
+      <UniqueIdentifier>{1a2b3c4d-5e6f-7890-abcd-ef1234567902}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Characters">
+      <UniqueIdentifier>{1a2b3c4d-5e6f-7890-abcd-ef1234567903}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Characters\Animations">
+      <UniqueIdentifier>{1a2b3c4d-5e6f-7890-abcd-ef1234567904}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Deployment">
+      <UniqueIdentifier>{1a2b3c4d-5e6f-7890-abcd-ef1234567905}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="deploy.ps1">
+      <Filter>Deployment</Filter>
+    </None>
+    <None Include="run.bat">
+      <Filter>Deployment</Filter>
+    </None>
+    <None Include="run_online.bat">
+      <Filter>Deployment</Filter>
+    </None>
+    <None Include="start_mygame.sh">
+      <Filter>Deployment</Filter>
+    </None>
+    <None Include="res\engine_config.xml">
+      <Filter>Configuration</Filter>
+    </None>
+    <None Include="res\scripts_config.xml">
+      <Filter>Configuration</Filter>
+    </None>
+    <None Include="res\server\bw.xml">
+      <Filter>Server</Filter>
+    </None>
+    <None Include="res\spaces\main\space.settings">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\scripts\entities.xml">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="res\scripts\services.xml">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="res\scripts\user_data_objects.xml">
+      <Filter>Scripts</Filter>
+    </None>
+    <None Include="res\scripts\entity_defs\alias.xml">
+      <Filter>Scripts\Entity Definitions</Filter>
+    </None>
+    <None Include="res\scripts\entity_defs\Avatar.def">
+      <Filter>Scripts\Entity Definitions</Filter>
+    </None>
+    <None Include="res\scripts\entity_defs\Greeter.def">
+      <Filter>Scripts\Entity Definitions</Filter>
+    </None>
+    <None Include="res\scripts\entity_defs\Space.def">
+      <Filter>Scripts\Entity Definitions</Filter>
+    </None>
+    <None Include="res\scripts\base\Avatar.py">
+      <Filter>Scripts\Base</Filter>
+    </None>
+    <None Include="res\scripts\base\BWPersonality.py">
+      <Filter>Scripts\Base</Filter>
+    </None>
+    <None Include="res\scripts\base\Greeter.py">
+      <Filter>Scripts\Base</Filter>
+    </None>
+    <None Include="res\scripts\base\Space.py">
+      <Filter>Scripts\Base</Filter>
+    </None>
+    <None Include="res\scripts\cell\Avatar.py">
+      <Filter>Scripts\Cell</Filter>
+    </None>
+    <None Include="res\scripts\cell\BWPersonality.py">
+      <Filter>Scripts\Cell</Filter>
+    </None>
+    <None Include="res\scripts\cell\Greeter.py">
+      <Filter>Scripts\Cell</Filter>
+    </None>
+    <None Include="res\scripts\cell\Space.py">
+      <Filter>Scripts\Cell</Filter>
+    </None>
+    <None Include="res\scripts\client\Avatar.py">
+      <Filter>Scripts\Client</Filter>
+    </None>
+    <None Include="res\scripts\client\BWPersonality.py">
+      <Filter>Scripts\Client</Filter>
+    </None>
+    <None Include="res\scripts\client\Greeter.py">
+      <Filter>Scripts\Client</Filter>
+    </None>
+    <None Include="res\scripts\client\Helpers\__init__.py">
+      <Filter>Scripts\Client\Helpers</Filter>
+    </None>
+    <None Include="res\scripts\client\Helpers\ChatConsole.py">
+      <Filter>Scripts\Client\Helpers</Filter>
+    </None>
+    <None Include="res\scripts\common\BWAutoImport.py">
+      <Filter>Scripts\Common</Filter>
+    </None>
+    <None Include="res\scripts\common\chapters.py">
+      <Filter>Scripts\Common</Filter>
+    </None>
+    <None Include="res\scripts\db\BWPersonality.py">
+      <Filter>Scripts\DB</Filter>
+    </None>
+    <None Include="res\characters\barbarian.model">
+      <Filter>Characters</Filter>
+    </None>
+    <None Include="res\characters\barbarian.visual">
+      <Filter>Characters</Filter>
+    </None>
+    <None Include="res\characters\barbarian.primitives">
+      <Filter>Characters</Filter>
+    </None>
+    <None Include="res\characters\barbarian.anca">
+      <Filter>Characters</Filter>
+    </None>
+    <None Include="res\characters\barbarian_d.bmp">
+      <Filter>Characters</Filter>
+    </None>
+    <None Include="res\characters\barbarian_armour_d.bmp">
+      <Filter>Characters</Filter>
+    </None>
+    <None Include="res\characters\bipedgirl.model">
+      <Filter>Characters</Filter>
+    </None>
+    <None Include="res\characters\bipedgirl.visual">
+      <Filter>Characters</Filter>
+    </None>
+    <None Include="res\characters\bipedgirl.primitives">
+      <Filter>Characters</Filter>
+    </None>
+    <None Include="res\characters\bipedgirl.thumbnail.bmp">
+      <Filter>Characters</Filter>
+    </None>
+    <None Include="res\characters\bipedgirl.anca">
+      <Filter>Characters</Filter>
+    </None>
+    <None Include="res\characters\axe.model">
+      <Filter>Characters</Filter>
+    </None>
+    <None Include="res\characters\axe.visual">
+      <Filter>Characters</Filter>
+    </None>
+    <None Include="res\characters\axe.primitives">
+      <Filter>Characters</Filter>
+    </None>
+    <None Include="res\characters\reflect.tga">
+      <Filter>Characters</Filter>
+    </None>
+    <None Include="res\characters\idle_a.animation">
+      <Filter>Characters</Filter>
+    </None>
+    <None Include="res\characters\m_waveonehand.animation">
+      <Filter>Characters</Filter>
+    </None>
+    <None Include="res\characters\animations\idle.animation">
+      <Filter>Characters\Animations</Filter>
+    </None>
+    <None Include="res\characters\animations\run.animation">
+      <Filter>Characters\Animations</Filter>
+    </None>
+    <None Include="res\characters\animations\spell.animation">
+      <Filter>Characters\Animations</Filter>
+    </None>
+    <None Include="res\spaces\main\00000000o.chunk">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\spaces\main\00000000o.cdata">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\spaces\main\00000001o.chunk">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\spaces\main\00000001o.cdata">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\spaces\main\0000fffeo.chunk">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\spaces\main\0000fffeo.cdata">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\spaces\main\0000ffffo.chunk">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\spaces\main\0000ffffo.cdata">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\spaces\main\00010000o.chunk">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\spaces\main\00010000o.cdata">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\spaces\main\00010001o.chunk">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\spaces\main\00010001o.cdata">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\spaces\main\0001fffeo.chunk">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\spaces\main\0001fffeo.cdata">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\spaces\main\0001ffffo.chunk">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\spaces\main\0001ffffo.cdata">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\spaces\main\fffe0000o.chunk">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\spaces\main\fffe0000o.cdata">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\spaces\main\fffe0001o.chunk">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\spaces\main\fffe0001o.cdata">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\spaces\main\fffefffeo.chunk">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\spaces\main\fffefffeo.cdata">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\spaces\main\fffeffffo.chunk">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\spaces\main\fffeffffo.cdata">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\spaces\main\ffff0000o.chunk">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\spaces\main\ffff0000o.cdata">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\spaces\main\ffff0001o.chunk">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\spaces\main\ffff0001o.cdata">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\spaces\main\fffffffeo.chunk">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\spaces\main\fffffffeo.cdata">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\spaces\main\ffffffffo.chunk">
+      <Filter>Spaces\Main</Filter>
+    </None>
+    <None Include="res\spaces\main\ffffffffo.cdata">
+      <Filter>Spaces\Main</Filter>
+    </None>
+  </ItemGroup>
+</Project>
