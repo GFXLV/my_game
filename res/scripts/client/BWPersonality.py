@@ -27,6 +27,7 @@ gHeartbeatHandle = None
 gCameraYaw = 0.0
 gCameraPitch = 0.0
 _cameraTickRunning = False
+_useManualCamera = False
 
 # ------------------------------------------------------------------------------
 # Section: Required callbacks
@@ -38,12 +39,28 @@ _cameraTickRunning = False
 # initial camera view, etc...
 def init( scriptsConfig, engineConfig, prefs ):
 
-	global gScriptsConfig, gMainMenu
+	global gScriptsConfig, gMainMenu, _useManualCamera
 	gScriptsConfig = scriptsConfig
 
 	# Show the main menu with Enter Game / Exit Game buttons
 	from Helpers import MainMenu
 	gMainMenu = MainMenu.MainMenu( _onEnterGame, _onExitGame )
+
+	# Set up third-person camera
+	try:
+		cam = BigWorld.Camera( "BehindObstacle" )
+		BigWorld.camera( cam )
+	except:
+		_useManualCamera = True
+
+	# Show cursor from the start (visible on main menu)
+	try:
+		mc = GUI.mcursor()
+		mc.visible = True
+		mc.clipped = True
+		BigWorld.setCursor( mc )
+	except:
+		pass
 
 # This is called immediately after init() finishes.  We're done with all our
 # init code, so this is a no-op.
@@ -112,17 +129,43 @@ def handleMouseEvent( event ):
 	if GUI.handleMouseEvent( event ):
 		return True
 
-	# Camera rotation with mouse movement
 	if gInGame and not event.isMouseButton() and ( event.dx != 0 or event.dy != 0 ):
 		sens = 0.005
-		gCameraYaw += event.dx * sens
-		gCameraPitch = max( -1.5, min( 1.5, gCameraPitch + event.dy * sens ) )
+		cam = BigWorld.camera()
+		player = BigWorld.player()
 
-	# Camera follows player every frame (called from _cameraTick)
+		# Strategy 1: rotate camera directly (works with BehindObstacle mode)
+		if cam is not None:
+			try:
+				if event.dx != 0 and hasattr( cam, "yaw" ):
+					cam.yaw += event.dx * sens
+				if event.dy != 0 and hasattr( cam, "pitch" ):
+					cam.pitch = max( -1.5, min( 1.5, cam.pitch + event.dy * sens ) )
+				return False
+			except:
+				pass
+
+		# Strategy 2: rotate player entity direction
+		if player is not None:
+			try:
+				if event.dx != 0 and hasattr( player, "direction" ):
+					d = player.direction
+					player.direction = ( d[ 0 ], d[ 1 ], d[ 2 ] + event.dx * sens )
+				return False
+			except:
+				pass
+
+		# Strategy 3: manual orbit (fallback for no camera mode)
+		if _useManualCamera:
+			gCameraYaw += event.dx * sens
+			gCameraPitch = max( -1.5, min( 1.5, gCameraPitch + event.dy * sens ) )
+
 	return False
 
 def _updateCamera():
-	global gInGame, gCameraYaw, gCameraPitch
+	global gInGame, gCameraYaw, gCameraPitch, _useManualCamera
+	if not _useManualCamera:
+		return
 	try:
 		player = BigWorld.player()
 		if player is not None and gInGame:

@@ -38,6 +38,14 @@ class PlayerAvatar( Avatar ):
 		# Create floating name tag above the model
 		self._createNameTag()
 
+		# Target the camera to this player
+		try:
+			cam = BigWorld.Camera( "BehindObstacle" )
+			BigWorld.camera( cam )
+		except:
+			import BWPersonality
+			BWPersonality._useManualCamera = True
+
 		# Show cursor so it's visible during gameplay
 		try:
 			mc = GUI.mcursor()
